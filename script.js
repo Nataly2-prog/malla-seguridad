@@ -4,30 +4,30 @@
 const cursos = {
   // Semestre 0
   "examen-diagnostico": { nombre: "Examen Diagnóstico", prereqs: [], semestre: "Semestre 0" },
-  "ingles-basico": { nombre: "Inglés básico", detalles: "Abre Inglés I", prereqs: [], semestre: "Semestre 0" },
+  "ingles-basico": { nombre: "Inglés básico", prereqs: [], semestre: "Semestre 0" },
 
   // Semestre 1
-  "bio-general": { nombre: "Biología general para entornos laborales", detalles: "Abre Agentes ambientales biológicos", prereqs: [], semestre: "Semestre 1" },
-  "comunicacion-escrita": { nombre: "Comunicación escrita", detalles: "Abre Comunicación oral, Ambiente humano", prereqs: [], semestre: "Semestre 1" },
+  "bio-general": { nombre: "Biología general para entornos laborales", prereqs: [], semestre: "Semestre 1" },
+  "comunicacion-escrita": { nombre: "Comunicación escrita", prereqs: [], semestre: "Semestre 1" },
   "intro-tecnica": { nombre: "Introducción a la técnica ciencia y tecnología", prereqs: [], semestre: "Semestre 1" },
-  "matematica-general": { nombre: "Matemática general", detalles: "Abre Cálculo diferencial e integral", prereqs: [], semestre: "Semestre 1" },
-  "lab-quimica-1": { nombre: "Laboratorio de química básica I", detalles: "Correquisito: Química básica I", prereqs: [], semestre: "Semestre 1" },
-  "quimica-1": { nombre: "Química básica I", detalles: "Correquisito: Lab. Química básica I", prereqs: [], semestre: "Semestre 1" },
-  "actividad-cultural-1": { nombre: "Actividad cultural I", detalles: "Abre Actividad cultural-deportiva", prereqs: [], semestre: "Semestre 1" },
-  "actividad-deportiva-1": { nombre: "Actividad deportiva I", detalles: "Abre Actividad cultural-deportiva", prereqs: [], semestre: "Semestre 1" },
-  "dib-planos": { nombre: "Dibujo e interpretación de planos", detalles: "Abre Máquinas y equipos", prereqs: [], semestre: "Semestre 1" },
-  "intro-seguridad": { nombre: "Introducción a la seguridad laboral", detalles: "Abre Máquinas y equipos", prereqs: [], semestre: "Semestre 1" },
+  "matematica-general": { nombre: "Matemática general", prereqs: [], semestre: "Semestre 1" },
+  "lab-quimica-1": { nombre: "Laboratorio de química básica I", prereqs: [], semestre: "Semestre 1" },
+  "quimica-1": { nombre: "Química básica I", prereqs: [], semestre: "Semestre 1" },
+  "actividad-cultural-1": { nombre: "Actividad cultural I", prereqs: [], semestre: "Semestre 1" },
+  "actividad-deportiva-1": { nombre: "Actividad deportiva I", prereqs: [], semestre: "Semestre 1" },
+  "dib-planos": { nombre: "Dibujo e interpretación de planos", prereqs: [], semestre: "Semestre 1" },
+  "intro-seguridad": { nombre: "Introducción a la seguridad laboral", prereqs: [], semestre: "Semestre 1" },
 
   // Semestre 2
   "comunicacion-oral": { nombre: "Comunicación oral", prereqs: ["comunicacion-escrita"], semestre: "Semestre 2" },
   "ingles-1": { nombre: "Inglés I", prereqs: ["ingles-basico"], semestre: "Semestre 2" },
   "humanistica": { nombre: "Centros de formación humanística", prereqs: [], semestre: "Semestre 2" },
-  "fisica-1": { nombre: "Física general I", detalles: "Correquisito: Cálculo diferencial e integral", prereqs: ["matematica-general"], semestre: "Semestre 2" },
-  "lab-fisica-1": { nombre: "Laboratorio de física general I", detalles: "Correquisito: Física general I", prereqs: [], semestre: "Semestre 2" },
+  "fisica-1": { nombre: "Física general I", prereqs: ["matematica-general"], semestre: "Semestre 2" },
+  "lab-fisica-1": { nombre: "Laboratorio de física general I", prereqs: [], semestre: "Semestre 2" },
   "calculo": { nombre: "Cálculo diferencial e integral", prereqs: ["matematica-general"], semestre: "Semestre 2" },
   "maquinas": { nombre: "Máquinas y equipos", prereqs: ["dib-planos", "intro-seguridad"], semestre: "Semestre 2" },
-  "lab-quimica-2": { nombre: "Laboratorio de química básica II", detalles: "Correquisito: Química básica II", prereqs: ["lab-quimica-1", "quimica-1"], semestre: "Semestre 2" },
-  "quimica-2": { nombre: "Química básica II", detalles: "Correquisito: Lab. química básica II", prereqs: ["lab-quimica-1", "quimica-1"], semestre: "Semestre 2" },
+  "lab-quimica-2": { nombre: "Laboratorio de química básica II", prereqs: ["lab-quimica-1", "quimica-1"], semestre: "Semestre 2" },
+  "quimica-2": { nombre: "Química básica II", prereqs: ["lab-quimica-1", "quimica-1"], semestre: "Semestre 2" },
   "actividad-cultural-deportiva": { nombre: "Actividad cultural-deportiva", prereqs: ["actividad-cultural-1", "actividad-deportiva-1"], semestre: "Semestre 2" },
 
   // Semestre 3
@@ -77,7 +77,6 @@ const cursos = {
   "admin-proyectos": { nombre: "Administración de proyectos", prereqs: ["ingenieria-financiera"], semestre: "Semestre 8" },
   "radiaciones-iluminacion": { nombre: "Evaluación y control de radiaciones e iluminación", prereqs: ["ambiente-termico", "ergonomia"], semestre: "Semestre 8" },
   "ergonomia": { nombre: "Factores humanos y ergonomía ocupacional", prereqs: ["radiaciones-iluminacion"], semestre: "Semestre 8" },
-  "electiva": { nombre: "Electiva", prereqs: ["radiaciones-iluminacion", "ergonomia"], semestre: "Semestre 8" },
 
   // Semestre 9
   "etica": { nombre: "Seminario de ética para la ingeniería", prereqs: ["legislacion"], semestre: "Semestre 9" },
@@ -89,7 +88,8 @@ const cursos = {
 
   // Semestre 10
   "estudios-costarricenses": { nombre: "Seminario de estudios costarricenses", prereqs: ["etica"], semestre: "Semestre 10" },
-  "trabajo-final": { nombre: "Trabajo final de graduación", prereqs: ["gestion-desastres", "taller-diseno"], semestre: "Semestre 10" }
+  "trabajo-final": { nombre: "Trabajo final de graduación", prereqs: ["gestion-desastres", "taller-diseno"], semestre: "Semestre 10" },
+  "electiva": { nombre: "Electiva", prereqs: ["radiaciones-iluminacion", "ergonomia"], semestre: "Semestre 10" }
 };
 
 const estado = JSON.parse(localStorage.getItem("mallaEstado")) || {};
@@ -126,7 +126,13 @@ function crearMalla() {
 
       const detalle = document.createElement("div");
       detalle.className = "detalle";
-      detalle.textContent = curso.detalles || "";
+
+      // Solo mostrar detalle si NO contiene "abre"
+      if (curso.detalles && !curso.detalles.toLowerCase().includes("abre")) {
+        detalle.textContent = curso.detalles;
+      } else {
+        detalle.textContent = "";
+      }
 
       div.appendChild(nombre);
       div.appendChild(detalle);
@@ -135,6 +141,7 @@ function crearMalla() {
 
       if (estado[curso.id]) div.classList.add("aprobado");
       else if (desbloqueado) div.classList.add("desbloqueado");
+      else div.classList.add("bloqueado");
 
       div.addEventListener("click", () => {
         if (div.classList.contains("desbloqueado") || div.classList.contains("aprobado")) {
@@ -152,4 +159,3 @@ function crearMalla() {
 }
 
 crearMalla();
-
