@@ -124,20 +124,13 @@ function crearMalla() {
       nombre.className = "nombre";
       nombre.textContent = curso.nombre;
 
-      const detalle = document.createElement("div");
-      detalle.className = "detalle";
-
-      // Solo mostrar detalle si NO contiene "abre"
-      if (curso.detalles && !curso.detalles.toLowerCase().includes("abre")) {
-        detalle.textContent = curso.detalles;
-      } else {
-        detalle.textContent = "";
-      }
-
       div.appendChild(nombre);
-      div.appendChild(detalle);
 
-      const desbloqueado = (curso.prereqs || []).every(id => estado[id]);
+      const mismoGrupo = lista.filter(c =>
+        JSON.stringify(c.prereqs || []) === JSON.stringify(curso.prereqs || [])
+      );
+
+      let desbloqueado = (curso.prereqs || []).every(id => estado[id]) || mismoGrupo.some(c => estado[c.id]);
 
       if (estado[curso.id]) div.classList.add("aprobado");
       else if (desbloqueado) div.classList.add("desbloqueado");
